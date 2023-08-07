@@ -1,0 +1,15 @@
+@import "bootstrap";
+
+a{
+    text-decoration: none;
+    color: inherit;
+    transition: 0.5s ease-in-out !important;
+}
+
+.active{
+    color: #89b7f7 !important;
+    transform: scale(1.1);
+    margin: 0 10px;
+    font-weight: bold;
+    transition: 0.5s ease !important;
+}
