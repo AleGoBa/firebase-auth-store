@@ -5,13 +5,16 @@ import {createPinia} from "pinia";
 import router from "./router.js";
 import Vue3Toastify from 'vue3-toastify';
 import 'vue3-toastify/dist/index.css';
-
-const pinia = createPinia();
+import {createVfm} from "vue-final-modal";
+import 'vue-final-modal/style.css'
+import {vue3Spinner} from 'vue3-spinner'
 
 const app = createApp(App)
 
-app.use(pinia)
 app.use(router)
+app.use(vue3Spinner)
 app.use(Vue3Toastify);
+app.use(createPinia())
+app.use(createVfm());
 
 app.mount('#app')

@@ -10,10 +10,13 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.1",
+    "bootstrap-icons": "^1.10.5",
     "firebase": "^10.1.0",
     "pinia": "^2.1.6",
     "vue": "^3.3.4",
+    "vue-final-modal": "^4.4.5",
     "vue-router": "^4.2.4",
+    "vue3-spinner": "^0.0.17",
     "vue3-toastify": "^0.1.11"
   },
   "devDependencies": {

@@ -1,5 +1,7 @@
 <script setup>
 import Navbar from "./components/layout/Navbar.vue";
+import {ModalsContainer} from "vue-final-modal"
+
 </script>
 
 <template>
@@ -15,5 +17,6 @@ import Navbar from "./components/layout/Navbar.vue";
     <footer class="row mt-4">
       <h6 class="text-muted fw-normal text-center ">Desarrollado por DAGB</h6>
     </footer>
+    <ModalsContainer/>
   </main>
 </template>

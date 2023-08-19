@@ -1,15 +1,23 @@
 @import "bootstrap";
+@import "bootstrap-icons";
+@import "modal.css";
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Montserrat&family=Roboto:wght@300&display=swap');
 
-a{
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+a {
     text-decoration: none;
     color: inherit;
     transition: 0.5s ease-in-out !important;
 }
 
-.active{
+.active {
     color: #89b7f7 !important;
     transform: scale(1.1);
     margin: 0 10px;
     font-weight: bold;
     transition: 0.5s ease !important;
 }
+
