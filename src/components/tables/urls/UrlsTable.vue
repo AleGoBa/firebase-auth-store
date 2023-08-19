@@ -2,21 +2,33 @@
 import {useUrlsStore} from "../../../store/useUrlsStore.js";
 import {storeToRefs} from "pinia";
 import {useUrlsModal} from "../../../composables/ulrs/modals/useUrlsModal.js";
+import {ref} from "vue";
+import {FadeLoader} from "vue3-spinner";
+
+const ready = ref(false)
 
 const urlsStore = useUrlsStore()
 const urlsModal = useUrlsModal();
 
-const {getUrls, deleteUrl} = urlsStore;
+const {getUrls} = urlsStore;
 const {urls} = storeToRefs(urlsStore)
 
 getUrls()
 
 const {show} = urlsModal
+
+const deleteUrl = (urlId) => {
+  ready.value = false;
+  urlsStore.deleteUrl(urlId)
+      .then(() => ready.value = true)
+}
+
+ready.value = true;
 </script>
 
 <template>
   <main>
-    <table class="table text-nowrap">
+    <table v-if="ready" class="table text-nowrap">
       <thead>
       <tr class="text-start">
         <th scope="col" class="w-auto">ID</th>
@@ -46,5 +58,8 @@ const {show} = urlsModal
       </template>
       </tbody>
     </table>
+    <div v-else class="d-flex justify-content-center my-4">
+      <FadeLoader style="height: 200px; position: absolute" />
+    </div>
   </main>
 </template>

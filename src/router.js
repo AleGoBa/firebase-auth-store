@@ -32,7 +32,7 @@ const router = createRouter({
 router.beforeEach(async (to, from, next) => {
     const userAuthStore = useUserAuthStore()
     const isActiveSession = await userAuthStore.getActiveUserSession();
-    if (!isActiveSession && to.name !== 'login') {
+    if (!isActiveSession && !['login', 'register'].includes(to.name)) {
         next({name: 'login'})
     } else {
         next()

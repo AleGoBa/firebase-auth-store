@@ -64,6 +64,7 @@ export const useUrlsStore = defineStore('useUrlsStore', () => {
             try {
                 const deletedDoc = await deleteDoc(doc(db, 'urls', urlId));
                 toast.success(`Url borrada correctamente`);
+                getUrls()
                 resolve(deletedDoc)
             } catch (err) {
                 toast.error(`Hubo un error al borrar la url`);

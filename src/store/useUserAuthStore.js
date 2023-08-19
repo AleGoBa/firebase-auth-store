@@ -45,7 +45,6 @@ export const useUserAuthStore = defineStore('useUserAuthStore', () => {
         signOut(auth).then(() => {
             urlsStore.reset()
             reset();
-            console.log("jiji")
             router.push("/login");
         }).catch((error) => {
             toast.error(error.message)
